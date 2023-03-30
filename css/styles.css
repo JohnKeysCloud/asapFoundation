@@ -25,7 +25,7 @@ h3 {
 
 p {
     font-family: 'Zilla Slab', serif;
-    font-size: clamp(0.8313rem, 2vw, 1.313rem);
+    font-size: clamp(1rem, 2vw, 1.313rem);
 }
 /* 
 font-family: 'Bebas Neue', cursive;
@@ -34,6 +34,12 @@ font-family: 'Zilla Slab', serif;
 
 section {
     position: relative;
+    overflow-x: hidden;
+}
+
+section .section-content {
+    max-width: 1200px;
+    margin-inline: auto;
 }
 
 /* * DEFAULTS gameOver  */
@@ -84,8 +90,8 @@ header #hero-content-wrapper #asapf-logo {
 }
 
 header #hero-content-wrapper #asapf-logo:hover {
-    transform: scale(1.05);
     opacity: 1;
+    transform: scale(1.05);
 }
 
 header #hero-content-wrapper #header-text-content {
@@ -110,8 +116,8 @@ main #about #mothers-day-gallery {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    padding-inline: 5vw;
     margin-bottom: 50px;
+    padding-inline: 5vw;
 }
 
 main #about #mothers-day-gallery img {
@@ -155,14 +161,14 @@ main #about #mothers-day-gallery img:nth-of-type(4) {
     grid-area: 1 / 9 / 4 / 11;
 }
 
-main #about-content-wrapper {
+main #about #about-content-wrapper {
     padding-inline: 5vw;
     position: relative;
 }
 
-main #about-content-wrapper h2 {
-    position: absolute;
+main #about #about-content-wrapper h2 {
     pointer-events: none;
+    position: absolute;
     text-shadow: -8px -8px black;
     top: -150px;
     z-index: 1;
@@ -177,17 +183,17 @@ main #about #about-cards {
 main #about #about-cards > .about-card {
     border-radius: 3rem;
     box-shadow: 0 0 8px black;
-    position: relative;
     padding: 1.5rem;
+    position: relative;
     z-index: 1;
 }
 
 main #about #about-cards > .about-card::before {
-    content: '';
-    border-radius: inherit;
-    position: absolute;
-    inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
+    border-radius: inherit;
+    content: '';
+    inset: 0;
+    position: absolute;
     transform: translate(0.5rem, 0.5rem);
     transition: all 111ms ease-in-out;
     z-index: -1;
@@ -202,57 +208,235 @@ main #about #about-cards > .about-card h3 {
 }
 
 main #history .custom-shape-divider-top-1680073608 {
+    left: 0;
+    line-height: 0;
+    overflow: hidden;
     position: absolute;
     top: 0;
-    left: 0;
     width: 100%;
-    overflow: hidden;
-    line-height: 0;
 }
 
 main #history {
-    background: url('../assets/back-to-school.jpg') center / cover no-repeat;
-    filter: saturate(0.4);
+    background: url('../assets/back-to-school.jpg') center / cover no-repeat, linear-gradient(to bottom, transparent, white);
+    filter: saturate(0.3);
     padding-bottom: 100px;
+    transition: all 0.7s ease-in-out;
 } 
+
+main #history:hover {
+    filter: saturate(1);
+}
 
 main #history #history-content-wrapper {
     padding-inline: 5vw;
 }
 
-#history-content-wrapper h2 {
+main #history #history-content-wrapper h2 {
+    color: white;
     text-align: end;
-    text-shadow: 5px -5px white;
-
+    text-shadow: 0px 3px 5px black, 8px -8px black;
 }
 
-#history-content-wrapper p {
+main #history #history-content-wrapper p {
     background-color: rgba(0, 0, 0, 0.8);
     border-radius: 25px;
     color: white;
-    padding: 50px 80px;
+    padding: 25px 25px;
     position: relative;
     text-align: center;
 }
 
-#history-content-wrapper p::before {
-    content: '';
-    border-radius: inherit;
-    position: absolute;
-    inset: 0;
+main #history #history-content-wrapper p::before {
     background-color: rgba(0, 0, 0, 0.5);
+    border-radius: inherit;
+    content: '';
+    inset: 0;
+    position: absolute;
     transform: translate(1rem, 1rem);
     transition: all 111ms ease-in-out;
     z-index: -1;
 }
 
-#history-content-wrapper p:hover::before {
+main #history #history-content-wrapper p:hover::before {
     transform: translate(0, 0);
 }
 
+main #mission {
+    padding-bottom: 100px;
+}
 
-/* main #about #about-cards > .about-card h2 {
-} */
+main #mission #mission-content-wrapper {
+    padding-inline: 5vw;
+}
+
+main #mission #mission-content-wrapper:hover .mission-card:first-of-type {
+    transform: translate(-8px, -33px);
+}
+
+main #mission #mission-content-wrapper:hover .mission-card:last-of-type {
+    transform: translate(8px, 33px);
+}
+
+main #mission #mission-content-wrapper:hover .mission-image:first-of-type {
+    transform: rotate(21deg);
+}
+
+main #mission #mission-content-wrapper:hover .mission-image:last-of-type {
+    transform: rotate(-21deg);
+}
+
+main #mission #mission-content-wrapper h2 {
+    color: white;
+    text-shadow: -8px -8px black;
+}
+
+main #mission #mission-content-wrapper #mission-cards {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+main #mission #mission-content-wrapper #mission-cards > .mission-card {
+    background: rgb(77, 77, 77);
+    border: 3px solid black;
+    border-radius: 3rem;
+    box-shadow: 0 0 8px black, inset 0 0 21px black;
+    display: grid;
+    place-items: center;
+    padding-inline: 1rem;
+    position: relative;
+    transition: all 380ms ease-in-out;
+    z-index: 1;
+}
+
+main #mission #mission-content-wrapper #mission-cards > .mission-image {
+    border-radius: 5rem;
+    box-shadow: 0 0 8px 5px black;
+    position: relative;
+    transition: all 555ms ease-in-out;
+    z-index: 0;
+}
+
+main #mission #mission-content-wrapper #mission-cards .mission-card:first-of-type {
+    grid-area: 1 / 1 / 2 / 6;
+}
+
+main #mission #mission-content-wrapper #mission-cards .mission-card:nth-of-type(2) {
+    grid-area: 2 / 3 / 3 / 8;
+}
+
+main #mission #mission-content-wrapper #mission-cards .mission-card:last-of-type {
+    grid-area: 3 / 5 / 4 / 10;
+}
+
+main #mission #mission-content-wrapper #mission-cards .mission-image:first-of-type {
+    grid-area: 1 / 6 / 3 / 10;
+}
+
+main #mission #mission-content-wrapper #mission-cards .mission-image:last-of-type {
+    grid-area: 3 / 1 / 5 / 5;
+}
+
+main #mission #mission-content-wrapper #mission-cards h3 {
+    border: 3px dashed white;
+    border-radius: 50px;
+    justify-self: start;
+    line-height: 1;
+    padding-inline: 1rem 2rem;
+    position: relative;
+    text-align: start;
+    transition: 380ms ease-in;
+    transform-origin: left;
+}
+
+main #mission #mission-content-wrapper #mission-cards h3::before {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: inherit;
+    content: '';
+    inset: 0;
+    position: absolute;
+    transform: translateX(0) scaleX(0.7);
+    transform-origin: left;
+    transition: all 111ms ease-in-out;
+    z-index: -1;
+}
+
+main #mission #mission-content-wrapper #mission-cards .mission-card:hover h3::before {
+    transform: scaleX(1) translateX(0);
+}
+
+main #mission #mission-content-wrapper #mission-cards p {
+    padding-bottom: 16px;
+    text-align: center;
+}
+
+main #saving-lives {
+    background: linear-gradient(to bottom, #222326, transparent, #222326);
+    padding-inline: 5vw;
+    position: relative;
+    padding-bottom: 100px;
+}
+
+main #saving-lives:hover #saving-lives-text-content-wrapper::before {
+    transform: translate(-15px, -15px);
+}
+
+main #saving-lives:hover #saving-lives-text-content-wrapper ~ img {
+    transform: scale(1) rotate(0);
+}
+
+main #saving-lives #saving-lives-content-wrapper {
+    display: grid;
+    gap: 50px;
+    place-items: center;
+}
+
+main #saving-lives #saving-lives-bg {
+    height: 100%;
+    inset: 0;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+main #saving-lives .saving-lives-text-section {
+    margin-bottom: 25px;
+}
+
+main #saving-lives h2 {
+    color: white;
+    margin-bottom: 15px;
+    text-align: end;
+    text-shadow: 0px 3px 5px black, 8px -8px black;
+}
+
+main #saving-lives #saving-lives-text-content-wrapper {
+    background-color: rgba(0, 0, 0, 0.555);
+    border-radius: 25px;
+    color: white;
+    padding: 16px 24px;
+    position: relative;
+    text-align: start;
+}
+
+main #saving-lives #saving-lives-text-content-wrapper::before {
+    background-color: rgba(0, 0, 0, 0.333);
+    border-radius: 25px;
+    content: '';
+    height: 100%;
+    inset: 0;
+    position: absolute;
+    transition: all 0.55s ease-in-out;
+    width: 100%;
+    z-index: -1;
+}
+
+main #saving-lives img {
+    border-radius: 25px;
+    box-shadow: 0 3px 18px 7px;
+    transform: scale(1.01) rotate(1deg);
+    transition: all 0.55s ease-in-out;
+}
 
 @media only screen and (min-width: 768px) {
     main #about #mothers-day-gallery {
@@ -267,6 +451,44 @@ main #history #history-content-wrapper {
     main #about #about-cards > .about-card {
         padding: 2rem;
     }
+
+    main #mission {
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+    }
+    
+    main #mission #mission-content-wrapper #mission-cards .mission-card:first-of-type {
+        grid-area: 1 / 1 / 2 / 6;
+    }
+
+    main #mission #mission-content-wrapper #mission-cards .mission-card:nth-of-type(2) {
+        grid-area: 2 / 3 / 3 / 8;
+    }
+
+    main #mission #mission-content-wrapper #mission-cards .mission-card:last-of-type {
+        grid-area: 3 / 5 / 4 / 10;
+    }
+
+    main #mission #mission-content-wrapper #mission-cards .mission-image:first-of-type {
+        grid-area: 1 / 6 / 3 / 10;
+    }
+
+    main #mission #mission-content-wrapper #mission-cards .mission-image:last-of-type {
+        grid-area: 2 / 1 / 5 / 5;
+    }
+
+    main #saving-lives #saving-lives-content-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        place-items: center;
+    }
+
+    main #saving-lives .saving-lives-text-section {
+        margin-bottom: 30px;
+    }
+
+    
 }
 
 
