@@ -158,7 +158,7 @@ main #about #mothers-day-gallery:has(img:nth-of-type(3):hover) img:nth-of-type(3
 }
 
 main #about #mothers-day-gallery img:nth-of-type(4) {
-    grid-area: 1 / 9 / 4 / 11;
+    grid-area: 2 / 9 / 4 / 11;
 }
 
 main #about #about-content-wrapper {
@@ -434,8 +434,51 @@ main #saving-lives #saving-lives-text-content-wrapper::before {
 main #saving-lives img {
     border-radius: 25px;
     box-shadow: 0 3px 18px 7px;
-    transform: scale(1.01) rotate(1deg);
+    transform: rotate(1deg);
     transition: all 0.55s ease-in-out;
+}
+
+main #gallery {
+    background: linear-gradient(to bottom, rgb(108, 58, 66), #222326, black);
+}
+
+main #gallery-content-wrapper {
+    padding-inline: 5vw;
+}
+
+main #gallery .event-divider {
+    margin-bottom: 50px
+}
+
+main #gallery h2 {
+    color: white;
+    text-shadow: 8px 8px 10px black;
+}
+
+main #gallery h3 {
+    text-shadow: 0 0 5px black;
+    text-align: center;
+}
+
+main #gallery .image-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding-inline: 5vw;
+}
+
+main #gallery .image-container:last-of-type {
+    grid-template-rows: 1fr;
+}
+
+main #gallery .image-container img:first-of-type,
+main #gallery .image-container img:nth-of-type(3) {
+    justify-self: end;
+}
+
+main #gallery .image-container img:nth-of-type(2),
+main #gallery .image-container img:last-of-type {
+    justify-self: start;
 }
 
 @media only screen and (min-width: 768px) {
@@ -490,10 +533,3 @@ main #saving-lives img {
 
     
 }
-
-
-
-
-
-
-
