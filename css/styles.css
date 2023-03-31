@@ -181,7 +181,7 @@ main #about #about-cards {
 }
 
 main #about #about-cards > .about-card {
-    background-color: rgb(108, 58, 66);
+    background: linear-gradient(to top, rgb(108, 58, 66), #222326) ;
     border: 3px solid white;
     border-radius: 3rem;
     box-shadow: 0 0 8px black;
@@ -198,7 +198,7 @@ main #about #about-cards > .about-card::before {
     inset: 0;
     position: absolute;
     transform: translateY(0) scale(0.95);
-    transform-origin: left;
+    transform-origin: top left;
     transition: all 111ms ease-in-out;
     z-index: -1;
 }
@@ -212,7 +212,9 @@ main #about #about-cards > .about-card h3 {
     border-radius: 50px;
     box-shadow: inset 0 0 10px 8px black;
     margin-bottom: 15px;
-    padding-inline: 1rem 2rem;
+    margin-inline: auto;
+    padding-inline: 2rem;
+    width: max-content;
 }
 
 main #history .custom-shape-divider-top-1680073608 {
@@ -302,21 +304,9 @@ main #mission #mission-content-wrapper #mission-cards {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    position: relative;
-    z-index: 1;
 }
 
-main #mission #mission-content-wrapper #mission-cards::before {
-    /* background-color: red; */
-    content: '';
-    inset: 0;
-    position: absolute;
-    transform: translate(-5px, -5px);
-    z-index: -1;
-
-}
-
-main #mission #mission-content-wrapper #mission-cards > .mission-card {
+main #mission #mission-content-wrapper #mission-cards .mission-card {
     background: rgb(77, 77, 77);
     border-radius: 3rem;
     border: 3px solid black;
@@ -327,6 +317,22 @@ main #mission #mission-content-wrapper #mission-cards > .mission-card {
     position: relative;
     transition: all 380ms ease-in-out;
     z-index: 1;
+}
+
+main #mission #mission-content-wrapper #mission-cards .mission-card::before {
+    background-color: rgba(0, 0, 0, 0.333);
+    border-radius: inherit;
+    content: '';
+    inset: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: inherit;
+    z-index: -1;
+}
+
+main #mission #mission-content-wrapper:hover #mission-cards .mission-card::before {
+    transform: scaleX(1);
 }
 
 main #mission #mission-content-wrapper #mission-cards > .mission-image {
