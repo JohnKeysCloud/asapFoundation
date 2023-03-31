@@ -15,12 +15,12 @@ h1 {
 
 h2 {
     font-family: 'Bebas Neue', cursive;
-    font-size: clamp(5rem, 11vw, 6.5rem);
+    font-size: clamp(5rem, 11vw, 6rem);
 }
 
 h3 {
     font-family: 'Bebas Neue', cursive;
-    font-size: clamp(1.313rem, 4vw, 3.313rem);
+    font-size: clamp(1.313rem, 5vw, 2.5rem);
 }
 
 p {
@@ -181,31 +181,36 @@ main #about #about-cards {
 }
 
 main #about #about-cards > .about-card {
+    background-color: rgb(108, 58, 66);
+    border: 3px solid white;
     border-radius: 3rem;
     box-shadow: 0 0 8px black;
     padding: 1.5rem;
     position: relative;
+    text-align: center;
     z-index: 1;
 }
 
 main #about #about-cards > .about-card::before {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #222326;
     border-radius: inherit;
     content: '';
     inset: 0;
     position: absolute;
-    transform: translate(0.5rem, 0.5rem);
+    transform: translateY(0) scale(0.95);
+    transform-origin: left;
     transition: all 111ms ease-in-out;
     z-index: -1;
 }
 
-main #about #about-cards > .about-card:hover::before {
-    transform: translate(0, 0);
+main #about #about-cards > .about-card:hover::before {    
+    transform: translateY(0) scale(1);
 }
 
 main #about #about-cards > .about-card h3 {
     border: 3px dashed white;
     border-radius: 50px;
+    box-shadow: inset 0 0 10px 8px black;
     margin-bottom: 15px;
     padding-inline: 1rem 2rem;
 }
@@ -297,6 +302,18 @@ main #mission #mission-content-wrapper #mission-cards {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    position: relative;
+    z-index: 1;
+}
+
+main #mission #mission-content-wrapper #mission-cards::before {
+    /* background-color: red; */
+    content: '';
+    inset: 0;
+    position: absolute;
+    transform: translate(-5px, -5px);
+    z-index: -1;
+
 }
 
 main #mission #mission-content-wrapper #mission-cards > .mission-card {
@@ -305,7 +322,7 @@ main #mission #mission-content-wrapper #mission-cards > .mission-card {
     border: 3px solid black;
     box-shadow: 0 0 8px black, inset 0 0 21px black;
     display: grid;
-    padding-inline: 1rem;
+    padding: 1rem;
     place-items: center;
     position: relative;
     transition: all 380ms ease-in-out;
@@ -343,8 +360,8 @@ main #mission #mission-content-wrapper #mission-cards .mission-image:last-of-typ
 main #mission #mission-content-wrapper #mission-cards h3 {
     border: 3px dashed white;
     border-radius: 50px;
+    box-shadow: inset 0 0 10px 8px black;
     justify-self: start;
-    line-height: 1;
     padding-inline: 1rem 2rem;
     position: relative;
     text-align: start;
@@ -375,9 +392,10 @@ main #mission #mission-content-wrapper #mission-cards p {
 
 main #saving-lives {
     background: linear-gradient(to bottom, #222326, transparent, #222326);
+    overflow: hidden;
+    padding-bottom: 100px;
     padding-inline: 5vw;
     position: relative;
-    padding-bottom: 100px;
 }
 
 main #saving-lives:hover #saving-lives-text-content-wrapper::before {
@@ -386,6 +404,10 @@ main #saving-lives:hover #saving-lives-text-content-wrapper::before {
 
 main #saving-lives:hover #saving-lives-text-content-wrapper ~ img {
     transform: scale(1) rotate(0);
+}
+
+main #saving-lives:hover #saving-lives-bg {
+    transform: scale(1.3);
 }
 
 main #saving-lives #saving-lives-content-wrapper {
@@ -451,7 +473,7 @@ main #gallery-content-wrapper {
 }
 
 main #gallery .event-divider {
-    margin-bottom: 50px
+    margin-bottom: 100px
 }
 
 main #gallery h2 {
@@ -462,7 +484,7 @@ main #gallery h2 {
 main #gallery h3 {
     margin-bottom: 33px;
     text-align: center;
-    text-shadow: 0 0 5px black;
+    text-shadow: 5px -5px 0px black;
 }
 
 main #gallery .image-container {
@@ -498,7 +520,7 @@ main #gallery .image-container:last-of-type {
     grid-template-rows: 1fr;
 }
 
-main #gallery .image-container::before {
+main #gallery .event-divider:not(:last-child) .image-container::before {
     background: radial-gradient(white, rgb(108, 58, 66), #222326);
     border-radius: 50%;
     content: '';
