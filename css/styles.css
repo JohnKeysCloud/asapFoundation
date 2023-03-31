@@ -163,16 +163,23 @@ header #hero-content-wrapper #header-text-content {
 
 header #header-scroll-wrapper {
     animation: 0.8s float cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate;
+    color: white;
     display: grid;
+    font-family: 'Bebas Neue', cursive;
     gap: 10px;
     opacity: 0.7;
     place-items: center;
     text-decoration: none;
 }
 
-header #header-scroll-wrapper p {
+header #header-scroll-wrapper:visited p {
     color: white;
-    font-family: 'Bebas Neue', cursive;
+    text-decoration: none;
+}
+
+header #header-scroll-wrapper p {
+    color: inherit;
+    font-family: inherit;
 }
 
 header #header-scroll-wrapper #scroll-down-img {
