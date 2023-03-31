@@ -53,6 +53,46 @@ header {
     position: relative;
 }
 
+header #nav-btn {
+    cursor: pointer;
+    display: grid;
+    filter: drop-shadow(0 0 3px black);
+    height: 33px;
+    place-items: center;
+    position: fixed;
+    right: min(5vw, 75px);
+    top: min(5vw, 75px);
+    width: 33px;
+    z-index: 2;
+}
+
+header #nav-btn #nav-btn-span {
+    background-color: white;
+    border-radius: 10px;
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    width: 100%;
+}
+
+header #nav-btn #nav-btn-span::before {
+    background-color: inherit;
+    border-radius: inherit;
+    content: '';
+    inset: 0;
+    position: absolute;
+    transform: translateY(-8px);
+} 
+
+header #nav-btn #nav-btn-span::after {
+    background-color: inherit;
+    border-radius: inherit;
+    content: '';
+    inset: 0;
+    position: absolute;
+    transform: translateY(8px);
+} 
+
 header #header-bg {
     background: url('../assets/heroBG.webp') center / cover no-repeat;
     filter: blur(2px);
@@ -427,8 +467,8 @@ main #saving-lives #saving-lives-bg {
     height: 100%;
     inset: 0;
     position: absolute;
-    width: 100%;
     transition: transform 555ms ease-in-out;
+    width: 100%;
     z-index: -1;
 }
 
