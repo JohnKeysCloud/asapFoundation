@@ -14,34 +14,22 @@
     <script defer src="js/script.js"></script>
 </head>
 <body>
-    <header id="header">
-        <button id="nav-btn" aria-label="Navigation">
+    <header id="top">
+        <button id="nav-btn" aria-label="Open Navigation">
             <span id="nav-btn-span">
                 <!-- injected via CSS -->
             </span>
         </button>
-        <dialog>
-            <nav>
-            <ul>
-                <li><a class="nav-link" href="#header">Top</a></li>
-                <li><a class="nav-link" href="#about">About</a></li>
-                <li><a class="nav-link" href="#history">History</a></li>
-                <li><a class="nav-link" href="#mission">Mission</a></li>
-                <li><a class="nav-link" href="#saving-lives">Saving Lives</a></li>
-                <li><a class="nav-link" href="#gallery">Gallery</a></li>
-            </ul>
-            </nav>
-        </dialog>
         <div id="hero-content-wrapper"> 
             <a href="https://www.asapf.org/" target="_blank" rel="nooppener"><img id="asapf-logo" src="assets/ASAPFoundationLogo.png" alt="ASAP Foundation Logo"></a>
             <div id="header-text-content">
                 <h1>A CHARITABLE FOUNDATION ADDRESSING THE ISSUE OF SUBSTANCE ABUSE AND SAFETY.</h1>
                 <!-- <p>A CHARITABLE FOUNDATION ADDRESSING THE ISSUE OF SUBSTANCE ABUSE AND SAFETY.</p> -->
             </div>
-            <div id="header-scroll-wrapper">
+            <a id="header-scroll-wrapper" href="#about" alt="About Section">
                 <p>Scroll Down</p>
                 <img id="scroll-down-img" src="assets/scroll-down.png" alt="Scroll Down">
-            </div>
+            </a>
         </div>
         <div id="header-bg"></div>
     </header>
@@ -176,5 +164,18 @@
     <footer>
         <p>© 2023 ASAP Foundation, All Rights Reserved</p>
     </footer>
+    <dialog id="nav-dialog">
+        <nav>
+            <h2>Menu</h2>
+            <ul>
+                <li><a class="nav-link" href="#top" alt="Top">Top</a></li>
+                <li><a class="nav-link" href="#about" alt="About">About</a></li>
+                <li><a class="nav-link" href="#history" alt="History">History</a></li>
+                <li><a class="nav-link" href="#mission" alt="Mission">Mission</a></li>
+                <li><a class="nav-link" href="#saving-lives" alt="Saving Lives">Saving Lives</a></li>
+                <li><a class="nav-link" href="#gallery" alt="Gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </dialog>
 </body>
 </html>
