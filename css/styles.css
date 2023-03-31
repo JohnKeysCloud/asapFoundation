@@ -172,7 +172,7 @@ header #header-scroll-wrapper {
     text-decoration: none;
 }
 
-header #header-scroll-wrapper:visited p {
+header #header-scroll-wrapper:visited {
     color: white;
     text-decoration: none;
 }
