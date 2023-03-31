@@ -204,7 +204,10 @@ main #about #about-cards > .about-card:hover::before {
 }
 
 main #about #about-cards > .about-card h3 {
+    border: 3px dashed white;
+    border-radius: 50px;
     margin-bottom: 15px;
+    padding-inline: 1rem 2rem;
 }
 
 main #history .custom-shape-divider-top-1680073608 {
@@ -338,8 +341,8 @@ main #mission #mission-content-wrapper #mission-cards .mission-image:last-of-typ
 }
 
 main #mission #mission-content-wrapper #mission-cards h3 {
-    border-radius: 50px;
     border: 3px dashed white;
+    border-radius: 50px;
     justify-self: start;
     line-height: 1;
     padding-inline: 1rem 2rem;
@@ -440,6 +443,7 @@ main #saving-lives img {
 
 main #gallery {
     background: linear-gradient(to bottom, rgb(108, 58, 66), #222326, black);
+    padding-bottom: 100px;
 }
 
 main #gallery-content-wrapper {
@@ -522,6 +526,14 @@ main #gallery .image-container img:nth-of-type(3) {
 main #gallery .image-container img:nth-of-type(2),
 main #gallery .image-container img:last-of-type {
     justify-self: start;
+}
+
+footer {
+    color: white;
+    background-color: black;
+    padding-bottom: 25px;
+    text-align: center;
+    text-shadow: 0 0 18px rgb(108, 58, 66);
 }
 
 @media only screen and (min-width: 768px) {
