@@ -298,12 +298,12 @@ main #mission #mission-content-wrapper #mission-cards {
 
 main #mission #mission-content-wrapper #mission-cards > .mission-card {
     background: rgb(77, 77, 77);
-    border: 3px solid black;
     border-radius: 3rem;
+    border: 3px solid black;
     box-shadow: 0 0 8px black, inset 0 0 21px black;
     display: grid;
-    place-items: center;
     padding-inline: 1rem;
+    place-items: center;
     position: relative;
     transition: all 380ms ease-in-out;
     z-index: 1;
@@ -338,15 +338,15 @@ main #mission #mission-content-wrapper #mission-cards .mission-image:last-of-typ
 }
 
 main #mission #mission-content-wrapper #mission-cards h3 {
-    border: 3px dashed white;
     border-radius: 50px;
+    border: 3px dashed white;
     justify-self: start;
     line-height: 1;
     padding-inline: 1rem 2rem;
     position: relative;
     text-align: start;
-    transition: 380ms ease-in;
     transform-origin: left;
+    transition: 380ms ease-in;
 }
 
 main #mission #mission-content-wrapper #mission-cards h3::before {
@@ -355,8 +355,8 @@ main #mission #mission-content-wrapper #mission-cards h3::before {
     content: '';
     inset: 0;
     position: absolute;
-    transform: translateX(0) scaleX(0.7);
     transform-origin: left;
+    transform: translateX(0) scaleX(0.7);
     transition: all 111ms ease-in-out;
     z-index: -1;
 }
@@ -456,8 +456,9 @@ main #gallery h2 {
 }
 
 main #gallery h3 {
-    text-shadow: 0 0 5px black;
+    margin-bottom: 33px;
     text-align: center;
+    text-shadow: 0 0 5px black;
 }
 
 main #gallery .image-container {
@@ -465,10 +466,52 @@ main #gallery .image-container {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     padding-inline: 5vw;
+    position: relative;
+    z-index: 1;
 }
+
+main #gallery .image-container:hover img {
+    filter: saturate(1);
+}
+
+main #gallery .image-container:hover img:nth-of-type(1) {
+    transform: translate(-15px, -15px) rotate(-3deg);
+} 
+
+main #gallery .image-container:hover img:nth-of-type(2) {
+    transform: translate(15px, -15px) rotate(3deg);
+} 
+
+main #gallery .image-container:hover img:nth-of-type(3) {
+    transform: translate(-15px, 15px) rotate(3deg);
+} 
+
+main #gallery .image-container:hover img:nth-of-type(4) {
+    transform: translate(15px, 15px) rotate(-3deg);
+} 
 
 main #gallery .image-container:last-of-type {
     grid-template-rows: 1fr;
+}
+
+main #gallery .image-container::before {
+    background: radial-gradient(white, rgb(108, 58, 66), #222326);
+    border-radius: 50%;
+    content: '';
+    height: 250px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    z-index: -1;
+}
+
+main #gallery .image-container img {
+    border-radius: 50px;
+    box-shadow: 0 0 5px 2px #222326;
+    filter: saturate(0);
+    transition: all 380ms ease-in-out;
 }
 
 main #gallery .image-container img:first-of-type,
@@ -522,14 +565,12 @@ main #gallery .image-container img:last-of-type {
 
     main #saving-lives #saving-lives-content-wrapper {
         display: grid;
-        grid-template-columns: 1fr 1fr;
         gap: 3rem;
+        grid-template-columns: 1fr 1fr;
         place-items: center;
     }
 
     main #saving-lives .saving-lives-text-section {
         margin-bottom: 30px;
     }
-
-    
 }
