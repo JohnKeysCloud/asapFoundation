@@ -1,3 +1,14 @@
+@keyframes float {
+    from {
+        transform: translateY(0);
+        opacity: 0.3;
+    }
+    to {
+        opacity: 0.8;
+        transform: translateY(8px);
+    }
+}
+
 /* * DEFAULTS pressStart */
 img {
     -webkit-user-select:none;
@@ -27,10 +38,6 @@ p {
     font-family: 'Zilla Slab', serif;
     font-size: clamp(1rem, 2vw, 1.313rem);
 }
-/* 
-font-family: 'Bebas Neue', cursive;
-font-family: 'Zilla Slab', serif; 
-*/
 
 section {
     position: relative;
@@ -136,6 +143,26 @@ header #hero-content-wrapper #asapf-logo:hover {
 
 header #hero-content-wrapper #header-text-content {
     transition: opacity 1s ease-in-out;
+}
+
+header #header-scroll-wrapper {
+    animation: 0.8s float cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate;
+    display: grid;
+    gap: 10px;
+    opacity: 0.7;
+    place-items: center;
+}
+
+header #header-scroll-wrapper p {
+    font-family: 'Bebas Neue', cursive;
+}
+
+header #header-scroll-wrapper #scroll-down-img {
+    border-radius: 50%;
+    border: 2px solid white;
+    height: 55px;
+    padding: 15px 10px 10px 10px;
+    width: 55px;
 }
 
 main section:nth-of-type(odd) {
@@ -611,11 +638,6 @@ footer {
         margin-bottom: 100px;
     }
 
-    main #about #about-cards {
-        gap: 3rem;
-        grid-template-columns: repeat(3, 1fr);
-    }
-
     main #about #about-cards > .about-card {
         padding: 2rem;
     }
@@ -654,5 +676,12 @@ footer {
 
     main #saving-lives .saving-lives-text-section {
         margin-bottom: 30px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    main #about #about-cards {
+        gap: 1rem;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
