@@ -79,6 +79,7 @@ header #nav-btn #nav-btn-span {
     display: inline-block;
     height: 2px;
     position: relative;
+    transition: 1s ease-in-out;
     width: 100%;
 }
 
@@ -89,6 +90,7 @@ header #nav-btn #nav-btn-span::before {
     inset: 0;
     position: absolute;
     transform: translateY(-8px);
+    transition: all 0.5s ease-in-out;
 } 
 
 header #nav-btn #nav-btn-span::after {
@@ -98,7 +100,20 @@ header #nav-btn #nav-btn-span::after {
     inset: 0;
     position: absolute;
     transform: translateY(8px);
+    transition: all 0.5s ease-in-out;
 } 
+
+header #nav-btn.is-active {
+    transform: rotate(-45deg);
+}
+
+header #nav-btn.is-active #nav-btn-span::before {
+    transform: translateY(0) scale(0);
+}
+
+header #nav-btn.is-active #nav-btn-span::after  {
+    transform: translateY(0) rotate(-90deg);
+}
 
 header #header-bg {
     background: url('../assets/heroBG.webp') center / cover no-repeat;
@@ -121,7 +136,7 @@ header #hero-content-wrapper {
     display: grid;
     padding-inline: 8vw;
     place-items: center;
-    gap: 8rem;
+    gap: 2rem;
     text-align: center;
     text-shadow: 0 0 8px black;
     z-index: 1;

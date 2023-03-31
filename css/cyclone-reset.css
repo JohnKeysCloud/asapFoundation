@@ -15,6 +15,7 @@
 
 html {
     box-sizing: inherit;
+    scroll-behavior: smooth;
 }
 
 html:focus-within {
