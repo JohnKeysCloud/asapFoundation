@@ -47,6 +47,7 @@ section .section-content {
     margin-inline: auto;
 }
 
+
 /* * DEFAULTS gameOver  */
 
 header {
@@ -581,7 +582,6 @@ main #saving-lives img {
 
 main #gallery {
     background: linear-gradient(to bottom, rgb(108, 58, 66), #222326, black);
-    padding-bottom: 100px;
 }
 
 main #gallery-content-wrapper {
