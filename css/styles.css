@@ -199,7 +199,7 @@ main section:nth-of-type(even) {
 }
 
 main #about {
-    padding-bottom: 50px;
+    padding-bottom: 25px;
 }
 
 main #about #mothers-day-gallery {
@@ -667,8 +667,8 @@ main #gallery .image-container img:last-of-type {
 }
 
 footer {
-    color: white;
     background-color: black;
+    color: white;
     padding-bottom: 25px;
     text-align: center;
     text-shadow: 0 0 18px rgb(108, 58, 66);
@@ -729,6 +729,63 @@ footer {
 #nav-dialog a:hover {
     opacity: 0.7;
 } 
+
+#qr-code-wrapper {
+    border-radius: 50%;
+    bottom: min(5vw, 75px);
+    cursor: pointer;
+    margin-inline: auto;
+    position: fixed;
+    right: min(5vw, 75px);
+    transform-origin: bottom right;
+    transform: rotate(-1turn) scale(0.15);
+    transition: all 380ms ease-in-out;
+    width: min(99vw, 600px);
+    z-index: 2;
+} 
+
+#qr-code-wrapper #qr-code-text {
+    color: white;
+    content: 'DONATE NOW';
+    font-family: 'Bebas Neue', cursive;
+    font-size: clamp(6.313rem, 15vw, 10rem);
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 3px 18px hotpink;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease-in-out;
+    z-index: 2;
+}
+
+#qr-code-wrapper #qr-psuedo-elem {
+    background: rgba(0, 0, 0, 0.333);
+    border-radius: inherit;
+    box-shadow: 0 0 25px 5px white;
+    content: '';
+    inset: 0;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out, filter 1s ease-in-out;
+    z-index: -1;
+}
+
+#qr-code-wrapper.is-active {
+    inset: 0;
+    transform: rotate(0) scale(1);
+
+}
+
+#qr-code-wrapper.is-active #qr-code-text {
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 2;
+}
+
+#qr-code-wrapper.is-active #qr-psuedo-elem {
+    background: white;
+    opacity: 1;
+}
+
 
 @media only screen and (min-width: 768px) {
     main #about #mothers-day-gallery {

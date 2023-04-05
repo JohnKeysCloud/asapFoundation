@@ -1,6 +1,7 @@
 const navBurger = document.getElementById('nav-btn');
 const nav = document.querySelector('dialog');
 const navLinks = document.querySelectorAll('.nav-link');
+const donateQRBtn = document.getElementById('qr-code-wrapper');
 
 for (let i = 0; i < navLinks.length; i++) {
     navLinks[i].addEventListener('click', () => {
@@ -8,6 +9,12 @@ for (let i = 0; i < navLinks.length; i++) {
         navBurger.classList.toggle('is-active');
     });
 }
+
+function toggleQRCode() {
+    donateQRBtn.classList.toggle('is-active');
+}
+
+donateQRBtn.addEventListener('click', toggleQRCode);
 
 navBurger.addEventListener('click', () => {
     navBurger.classList.toggle('is-active');
